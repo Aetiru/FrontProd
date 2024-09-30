@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-gray-900;
+  color: #f0f0f0;
+
+  font-family: 'Poppins', sans-serif;
+
+
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@import 'ngx-toastr/toastr';
+
+
+@import 'ngx-toastr/toastr-bs4-alert';
+
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+@import 'ngx-toastr/toastr-bs4-alert';
+
+@import 'ngx-toastr/toastr-bs5-alert';

@@ -1,0 +1,74 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-2">
+    <img [src]="character.image" [alt]="character.name"
+      class="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover lg:rounded-l-lg">
+    <div class="p-6">
+      <!-- Formulario para actualizar la información del personaje -->
+      <form (ngSubmit)="updateCharacter()" #characterForm="ngForm">
+        <div class="mb-4">
+          <label class="text-gray-400" for="name"><strong>Nombre:</strong></label>
+          <input type="text" id="name" [(ngModel)]="character.name" name="name"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="status"><strong>Estado:</strong></label>
+          <input type="text" id="status" [(ngModel)]="character.status" name="status"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="species"><strong>Especie:</strong></label>
+          <input type="text" id="species" [(ngModel)]="character.species" name="species"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="gender"><strong>Género:</strong></label>
+          <input type="text" id="gender" [(ngModel)]="character.gender" name="gender"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="origin"><strong>Origen:</strong></label>
+          <input type="text" id="origin" [(ngModel)]="character.origin.name" name="origin"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="location"><strong>Última Ubicación:</strong></label>
+          <input type="text" id="location" [(ngModel)]="character.location.name" name="location"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <!-- <div class="mb-4">
+          <label class="text-gray-400" for="description"><strong>Descripción:</strong></label>
+          <textarea id="description" [(ngModel)]="character.description" name="description"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2"></textarea>
+        </div> -->
+
+        <!-- Botón para guardar los cambios -->
+        <div class="mt-6">
+          <button type="submit" [disabled]="!characterForm.form.valid"
+            class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+            Guardar cambios
+          </button>
+        </div>
+      </form>
+      <!-- Botón para volver a la lista de personajes -->
+      <div class="mt-6">
+        <button (click)="goBack()"
+          class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+          Volver a la lista de personajes
+        </button>
+      </div>
+      <div class="mt-6">
+
+        <button (click)="deleteCharacter()"
+          class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-1 rounded transition duration-300">
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

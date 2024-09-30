@@ -1,0 +1,68 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-2">
+    <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="aa"
+      class="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover lg:rounded-l-lg">
+    <div class="p-6">
+      <!-- Formulario para actualizar la información del personaje -->
+      <form (ngSubmit)="createCharacter()" #characterForm="ngForm">
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="name"><strong>Nombre:</strong></label>
+          <input type="text" id="name" name="name" [(ngModel)]="character.name" required
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="status"><strong>Estado:</strong></label>
+          <input type="text" id="status" name="status" [(ngModel)]="character.status" required
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="species"><strong>Especie:</strong></label>
+          <input type="text" id="species" name="species" [(ngModel)]="character.species" required
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="gender"><strong>Género:</strong></label>
+          <input type="text" id="gender" name="gender" [(ngModel)]="character.gender" required
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="origin"><strong>Origen:</strong></label>
+          <input type="text" id="origin" name="origin" [(ngModel)]="character.origin.name" required
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <div class="mb-4">
+          <label class="text-gray-400" for="location"><strong>Última Ubicación:</strong></label>
+          <input type="text" id="location" name="location" [(ngModel)]="character.location.name" required
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2">
+        </div>
+
+        <!-- <div class="mb-4">
+          <label class="text-gray-400" for="description"><strong>Descripción:</strong></label>
+          <textarea id="description" [(ngModel)]="character.description" name="description"
+            class="w-full bg-gray-900 text-white border-2 border-gray-700 rounded px-3 py-2"></textarea>
+        </div> -->
+
+        <!-- Botón para guardar los cambios -->
+        <div class="mt-6">
+          <button type="submit" [disabled]="!characterForm.form.valid"
+            class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+            Guardar
+          </button>
+        </div>
+      </form>
+      <!-- Botón para volver a la lista de personajes -->
+      <div class="mt-6">
+        <button (click)="goBack()"
+          class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+          Volver a la lista de personajes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
